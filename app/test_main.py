@@ -20,6 +20,7 @@ def test_core_get_coin_combination(
 ) -> None:
     assert get_coin_combination(cents) == result
 
+
 @pytest.mark.parametrize(
     "cents,result",
     (
@@ -33,6 +34,7 @@ def test_if_has_different_types_of_coins(
     cents: int, result: list[int]
 ) -> None:
     actual = get_coin_combination(cents)
-    positive_values = [number_of_coins for number_of_coins in actual if number_of_coins > 0]
+    positive_values = [
+        number_of_coins for number_of_coins in actual if number_of_coins > 0
+    ]
     assert len(positive_values) >= 2
-
